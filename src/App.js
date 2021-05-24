@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import JobSearch from "./components/JobSearch";
+import Navbar from "./components/Navbar";
+import Presentation from "./components/Presentation";
+import ExtraSection from "./components/ExtraSection";
+import Companies from "./pages/Companies";
+import Jobs from "./pages/Jobs";
+import "./index.css";
+import FooterInfo from "./components/FooterInfo";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Presentation />
+              <JobSearch />
+              <ExtraSection />
+            </Route>
+            <Route path="/companies">
+              <Companies/>
+            </Route>
+            <Route path="/jobs">
+              <Jobs/>
+            </Route>
+          </Switch>
+        </div>
+        <FooterInfo />
+      </div>
+    </Router>
   );
 }
 

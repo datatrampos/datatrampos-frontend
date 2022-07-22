@@ -1,30 +1,33 @@
 import JobSearch from "./components/JobSearch";
-import Navbar from "./components/Navbar";
-import Presentation from "./components/Presentation";
+import Presentation from "./sections/Presentation/Presentation";
 import ExtraSection from "./components/ExtraSection";
 import Companies from "./pages/Companies";
 import Jobs from "./pages/Jobs";
 import "./index.css";
 import FooterInfo from "./components/FooterInfo";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
         <div className="content">
           <Switch>
             <Route exact path="/">
               <Presentation />
-              <JobSearch />
+              <QueryClientProvider client={queryClient}>
+                <JobSearch />
+              </QueryClientProvider>
               <ExtraSection />
             </Route>
             <Route path="/companies">
-              <Companies/>
+              <Companies />
             </Route>
             <Route path="/jobs">
-              <Jobs/>
+              <Jobs />
             </Route>
           </Switch>
         </div>

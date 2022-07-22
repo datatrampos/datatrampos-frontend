@@ -1,20 +1,24 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 
+import "antd/dist/antd.css";
+import { Pagination } from "antd";
+
 import { PageTitle } from "../components/Utils";
-import JobClient from "../api/clients/JobClient";
+import fetchJobs from "../api/clients/JobClient";
 import { JobCard } from "../components/JobCard/JobCard";
 
 function JobSearch() {
-  const { data, isLoading } = useQuery(["jobs"], JobClient);
+  const [pageNumber, setPageNumber] = useState(1);
+  const { data, isLoading } = useQuery(["jobs", pageNumber], () => fetchJobs(pageNumber));
 
   return (
     <Container id="vagas">
       <PageTitle>Vagas disponíveis</PageTitle>
       <JobList>
         {!isLoading &&
-          data.map((job) => (
+          data.results.map((job) => (
             <JobCard
               key={job.id}
               logo={job?.company?.logo}
@@ -25,6 +29,18 @@ function JobSearch() {
               remote={job.remote}
             />
           ))}
+        {!isLoading && (
+          <Pagination
+            defaultCurrent={1}
+            total={data.count}
+            defaultPageSize={10}
+            pageSize={10}
+            showSizeChanger={false}
+            onChange={(page) => {
+              setPageNumber(page);
+            }}
+          />
+        )}
       </JobList>
     </Container>
   );

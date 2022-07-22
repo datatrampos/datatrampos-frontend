@@ -1,8 +1,8 @@
 import { axiosInstance } from "../core/apiConfig";
 
-async function JobClient() {
-  const { data } = await axiosInstance.get("jobs/");
+async function fetchJobs(page) {
+  const { data } = await axiosInstance.get(`jobs/?page=${page}`);
   return data;
 }
 
-export default JobClient;
+export default fetchJobs;

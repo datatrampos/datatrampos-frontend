@@ -1,4 +1,4 @@
-import JobSearch from '../components/JobSearch';
+import JobSearch from '../components/JobSearch/JobSearch';
 
 function Jobs() {
     return (

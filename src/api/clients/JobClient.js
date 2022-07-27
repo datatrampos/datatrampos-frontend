@@ -1,11 +1,19 @@
 import { axiosInstance } from "../core/apiConfig";
 
-async function fetchJobs(page = 1, company = "", remote = "") {
-  console.log(remote);
+export async function fetchJobs(
+  page = 1,
+  company = "",
+  remote = "",
+  orderBy = "date",
+  location = ""
+) {
   const { data } = await axiosInstance.get(
-    `jobs/?page=${page}&company=${company}&remote=${remote}`
+    `jobs/?page=${page}&company=${company}&remote=${remote}&orderBy=${orderBy}&location=${location}`
   );
   return data;
 }
 
-export default fetchJobs;
+export async function fetchLocations() {
+  const { data } = await axiosInstance.get(`locations`);
+  return data;
+}

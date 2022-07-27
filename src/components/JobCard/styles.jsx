@@ -6,22 +6,25 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   width: 800px;
-  margin-bottom: 30px;
-  padding: 16px 32px;
+  margin-bottom: 20px;
+  padding: 12px 28px;
   border-radius: 20px;
+  border:1px solid ${COLORS.white} ;
   background-color: white;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1); */
   justify-content: space-between;
   cursor: pointer;
 
   &:hover {
     background-color: whitesmoke;
+    /* border:1px solid ${COLORS.darkRed} ; */
   }
 
   img {
     width: 70px;
     border-radius: 50%;
     margin-right: 30px;
+    border:2px solid ${COLORS.darkRed} ;
   }
 `;
 
@@ -31,7 +34,7 @@ export const JobCardInfo = styled.div`
 `;
 
 export const CompanyName = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: ${COLORS.darkPink};
 `;
@@ -39,7 +42,7 @@ export const CompanyName = styled.span`
 export const CardItemsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 12px;
+  margin-top: 8px;
 `;
 
 export const CardButton = styled.a`
@@ -52,6 +55,11 @@ export const CardButton = styled.a`
   color: white !important ;
   background-color: ${COLORS.darkPink};
   text-align: center;
+
+  &:hover {
+    background-color: ${COLORS.darkRed};
+    color: ${COLORS.darkPink} !important;
+  }
 `;
 
 export const CardItem = styled.div`
@@ -70,7 +78,7 @@ export const CardItem = styled.div`
 export const JobTitle = styled.div`
   font-size: 18px;
   color: ${COLORS.darkRed};
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   margin-top: 10px;
 `;

@@ -4,6 +4,7 @@ import { COLORS } from "../../styles/colors";
 export const JobList = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const Container = styled.div`
@@ -11,29 +12,28 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 50px;
   padding-right: 90px;
   padding-left: 90px;
 `;
 
 export const JobFilter = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: ${COLORS.darkRed};
   width: 100%;
-  border-radius: 20px;
-  padding: 20px;
+  padding: 40px 20px;
 `;
 
 export const InputContainer = styled.span`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-right: 30px;
 `;
 
 export const Label = styled.label`
-  color: ${COLORS.white};
+  color: ${(props) => (props.red ? COLORS.darkRed : COLORS.white)};
   font-size: 17px;
   margin-right: 7px;
 `;

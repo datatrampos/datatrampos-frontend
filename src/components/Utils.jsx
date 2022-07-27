@@ -68,8 +68,7 @@ export const SecondaryButton = styled.a`
 
 export const PageTitle = styled.p`
   font-size: 35px;
-  font-weight: 600;
-  color: ${COLORS.darkRed};
-  margin: 50px 0px 50px 0px;
+  font-weight: 100;
+  color: ${COLORS.white};
   text-align: center;
 `;

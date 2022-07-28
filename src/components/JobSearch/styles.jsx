@@ -13,14 +13,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  padding-right: 90px;
-  padding-left: 90px;
+  margin-bottom: 50px;
 `;
 
 export const JobFilter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center ;
   background-color: ${COLORS.darkRed};
   width: 100%;
   padding: 40px 20px;
@@ -43,4 +43,5 @@ export const Select = styled.select``;
 export const OptionLogo = styled.img`
   width: 30px;
   margin-right: 5px;
+  border-radius: 50%;
 `;

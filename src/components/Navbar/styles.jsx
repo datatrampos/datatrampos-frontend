@@ -12,7 +12,7 @@ export const Nav = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   a {
@@ -23,6 +23,10 @@ export const Nav = styled.div`
 
   img {
     width: 400px;
+
+    @media (max-width: 900px) {
+      width: 300px;
+    }
   }
 `;
 

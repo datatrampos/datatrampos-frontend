@@ -1,7 +1,5 @@
 import JobSearch from "./components/JobSearch/JobSearch";
 import ExtraSection from "./components/ExtraSection";
-import Companies from "./pages/Companies";
-import Jobs from "./pages/Jobs";
 import Presentation from "./sections/Presentation/Presentation";
 import "./index.css";
 import FooterInfo from "./components/FooterInfo";
@@ -23,13 +21,6 @@ function App() {
               <QueryClientProvider client={queryClient}>
                 <JobSearch />
               </QueryClientProvider>
-              <ExtraSection />
-            </Route>
-            <Route path="/companies">
-              <Companies />
-            </Route>
-            <Route path="/jobs">
-              <Jobs />
             </Route>
           </Switch>
         </div>

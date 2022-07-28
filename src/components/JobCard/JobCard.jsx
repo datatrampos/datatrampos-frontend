@@ -8,13 +8,15 @@ import {
   CardItemsContainer,
   CardItem,
   CardButton,
+  CardInfoContainer
 } from "./styles";
 import { Home, LocationCity } from "@material-ui/icons";
 
 export const JobCard = (props) => {
   return (
     <Container>
-      <Row center>
+      <CardInfoContainer>
+
         <img src={`data:image/jpeg;base64,${props.logo}`} alt={`${props.companyName}-logo`} />
         <JobCardInfo>
           <CompanyName>{props.companyName}</CompanyName>
@@ -36,7 +38,7 @@ export const JobCard = (props) => {
             )}
           </CardItemsContainer>
         </JobCardInfo>
-      </Row>
+      </CardInfoContainer>
       <CardButton
         style={{ color: "rgb(77, 77, 77)" }}
         href={props.url}

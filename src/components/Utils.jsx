@@ -5,6 +5,8 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: ${(props) => (props.center ? "center" : "baseline")};
+  flex-wrap: ${(props) => (props.wrap ? "wrap" : "nowrap")};
+  justify-content:${(props) => (props.justifyCenter ? "center" : "baseline")}; ;
 `;
 
 export const Col = styled.div`

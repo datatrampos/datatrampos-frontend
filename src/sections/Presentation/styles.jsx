@@ -12,7 +12,7 @@ export const ImageContainer = styled.img`
   background-size: cover;
   background-repeat: no-repeat; */
   /* border-radius: 35px; */
-  
+
   width: 510px;
   /* 
   height: 287px; */
@@ -27,6 +27,7 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const TextPresentation = styled.h1`

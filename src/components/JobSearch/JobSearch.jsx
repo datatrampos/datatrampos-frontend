@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 
 import "antd/dist/antd.css";
-import { Pagination, Select, Checkbox, Row } from "antd";
+import { Pagination, Select,} from "antd";
 
-import { PageTitle } from "../Utils";
+import { PageTitle, Row } from "../Utils";
 import { fetchJobs, fetchLocations } from "../../api/clients/JobClient";
 import fetchCompanies from "../../api/clients/CompanyClient";
 import { JobCard } from "../JobCard/JobCard";
@@ -22,7 +22,7 @@ function JobSearch() {
   const [pageNumber, setPageNumber] = useState(1);
   const [company, setCompany] = useState("");
   const [remote, setRemote] = useState("");
-  const [orderBy, setOrder] = useState("");
+  const [orderBy, setOrder] = useState("date");
   const [location, setLocation] = useState("");
 
   const { data: jobData, isLoading } = useQuery(
@@ -44,13 +44,14 @@ function JobSearch() {
     <>
       <JobFilter>
         <PageTitle>Pesquisar vagas</PageTitle>
-        <Row>
+        <Row center wrap justifyCenter>
           <InputContainer>
             <Label>Ambiente de trabalho:</Label>
             <Select
               style={{ width: 200 }}
               onChange={(value) => {
                 setRemote(value);
+                setPageNumber(1)
               }}
               defaultValue=""
             >
@@ -65,6 +66,7 @@ function JobSearch() {
               style={{ width: 200 }}
               onChange={(value) => {
                 setCompany(value);
+                setPageNumber(1)
               }}
               defaultValue=""
             >
@@ -87,6 +89,7 @@ function JobSearch() {
               style={{ width: 200 }}
               onChange={(value) => {
                 setLocation(value);
+                setPageNumber(1)
               }}
               defaultValue=""
             >
@@ -107,6 +110,7 @@ function JobSearch() {
               style={{ width: 150, marginBottom: "20px" }}
               onChange={(value) => {
                 setOrder(value);
+                setPageNumber(1)
               }}
               defaultValue="date"
               bordered={false}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 
 import "antd/dist/antd.css";
-import { Pagination, Select,} from "antd";
+import { Pagination, Select } from "antd";
 
 import { PageTitle, Row } from "../Utils";
 import { fetchJobs, fetchLocations } from "../../api/clients/JobClient";
@@ -51,7 +51,7 @@ function JobSearch() {
               style={{ width: 200 }}
               onChange={(value) => {
                 setRemote(value);
-                setPageNumber(1)
+                setPageNumber(1);
               }}
               defaultValue=""
             >
@@ -66,7 +66,7 @@ function JobSearch() {
               style={{ width: 200 }}
               onChange={(value) => {
                 setCompany(value);
-                setPageNumber(1)
+                setPageNumber(1);
               }}
               defaultValue=""
             >
@@ -89,7 +89,7 @@ function JobSearch() {
               style={{ width: 200 }}
               onChange={(value) => {
                 setLocation(value);
-                setPageNumber(1)
+                setPageNumber(1);
               }}
               defaultValue=""
             >
@@ -110,7 +110,7 @@ function JobSearch() {
               style={{ width: 150, marginBottom: "20px" }}
               onChange={(value) => {
                 setOrder(value);
-                setPageNumber(1)
+                setPageNumber(1);
               }}
               defaultValue="date"
               bordered={false}

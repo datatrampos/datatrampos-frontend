@@ -7,7 +7,7 @@ function Navbar() {
       <ImageContainer>
         <Nav>
           <div>
-            <a href="http://localhost:3000">
+            <a href="/">
               <img src={Logo} alt="datatrampos-logo-title" />
             </a>
           </div>

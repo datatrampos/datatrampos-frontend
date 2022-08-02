@@ -40,6 +40,29 @@ export const Container = styled.div`
   }
 `;
 
+export const CompanyWithoutLogo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 30px;
+  font-size:30px ;
+  font-weight:700 ;
+  color:${COLORS.darkPink} ;
+  border: 2px solid ${COLORS.darkRed};
+
+  @media (max-width: 900px) {
+    width: 50px;
+    height: 50px;
+    font-size:24px ;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+`;
+
 export const JobCardInfo = styled.div`
   display: flex;
   flex-direction: column;

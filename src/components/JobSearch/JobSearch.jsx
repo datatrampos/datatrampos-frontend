@@ -16,6 +16,7 @@ import {
   Label,
   OptionLogo,
   InputContainer,
+  NoLogo,
 } from "./styles";
 
 function JobSearch() {
@@ -74,10 +75,15 @@ function JobSearch() {
               {!loadingCompanies &&
                 companiesOptions.map((company) => (
                   <option value={company.id}>
-                    <OptionLogo
-                      src={`data:image/jpeg;base64,${company.logo}`}
-                      alt={`${company.name}-logo`}
-                    />
+                    {company.logo ? (
+                      <OptionLogo
+                        src={`data:image/jpeg;base64,${company.logo}`}
+                        alt={`${company.name}-logo`}
+                      />
+                    ) : (
+                      <NoLogo>{company.name.slice(0, 2).toUpperCase()}</NoLogo>
+                    )}
+
                     {company.name}
                   </option>
                 ))}

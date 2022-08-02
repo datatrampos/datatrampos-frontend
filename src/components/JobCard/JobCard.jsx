@@ -1,5 +1,4 @@
 import React from "react";
-import { Row } from "../Utils";
 import {
   Container,
   JobCardInfo,
@@ -8,7 +7,8 @@ import {
   CardItemsContainer,
   CardItem,
   CardButton,
-  CardInfoContainer
+  CardInfoContainer,
+  CompanyWithoutLogo,
 } from "./styles";
 import { Home, LocationCity } from "@material-ui/icons";
 
@@ -16,8 +16,17 @@ export const JobCard = (props) => {
   return (
     <Container>
       <CardInfoContainer>
+        {props.logo ? (
+          <img
+            src={`data:image/jpeg;base64,${props.logo}`}
+            alt={`${props.companyName}-logo`}
+          />
+        ) : (
+          <CompanyWithoutLogo>
+            {props.companyName.slice(0, 2).toUpperCase()}
+          </CompanyWithoutLogo>
+        )}
 
-        <img src={`data:image/jpeg;base64,${props.logo}`} alt={`${props.companyName}-logo`} />
         <JobCardInfo>
           <CompanyName>{props.companyName}</CompanyName>
           <JobTitle href={props.url} target="_blank" rel="noreferrer">

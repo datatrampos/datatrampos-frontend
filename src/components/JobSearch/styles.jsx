@@ -20,7 +20,7 @@ export const JobFilter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center ;
+  justify-content: center;
   background-color: ${COLORS.darkRed};
   width: 100%;
   padding: 40px 20px;
@@ -44,4 +44,13 @@ export const OptionLogo = styled.img`
   width: 30px;
   margin-right: 5px;
   border-radius: 50%;
+`;
+
+export const NoLogo = styled.span`
+  color: ${COLORS.darkPink};
+  text-align: center;
+  margin-right: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  width: 30px;
 `;

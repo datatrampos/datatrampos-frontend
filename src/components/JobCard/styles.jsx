@@ -28,9 +28,8 @@ export const Container = styled.div`
 
   img {
     width: 70px;
-    border-radius: 50%;
+    border-radius: 10px;
     margin-right: 30px;
-    border: 2px solid ${COLORS.darkRed};
 
     @media (max-width: 900px) {
       width: 50px;

@@ -3,17 +3,20 @@ import { COLORS } from "../../styles/colors";
 
 export const JobList = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
 `;
 
 export const Container = styled.div`
-  background-color: ${COLORS.white};
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 50px 0;
 `;
 
 export const JobFilter = styled.div`

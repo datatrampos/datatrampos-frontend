@@ -9,6 +9,7 @@ import {
   CardButton,
   CardInfoContainer,
   CompanyWithoutLogo,
+  LogoContainer,
 } from "./styles";
 import { Home, LocationCity } from "@material-ui/icons";
 
@@ -16,16 +17,18 @@ export const JobCard = (props) => {
   return (
     <Container>
       <CardInfoContainer>
-        {props.logo ? (
-          <img
-            src={`data:image/jpeg;base64,${props.logo}`}
-            alt={`${props.companyName}-logo`}
-          />
-        ) : (
-          <CompanyWithoutLogo>
-            {props.companyName.slice(0, 2).toUpperCase()}
-          </CompanyWithoutLogo>
-        )}
+        <LogoContainer>
+          {props.logo ? (
+            <img
+              src={`data:image/jpeg;base64,${props.logo}`}
+              alt={`${props.companyName}-logo`}
+            />
+          ) : (
+            <CompanyWithoutLogo>
+              {props.companyName.slice(0, 2).toUpperCase()}
+            </CompanyWithoutLogo>
+          )}
+        </LogoContainer>
 
         <JobCardInfo>
           <CompanyName>{props.companyName}</CompanyName>

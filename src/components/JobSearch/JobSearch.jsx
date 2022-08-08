@@ -109,23 +109,23 @@ function JobSearch() {
         </Row>
       </JobFilter>
       <Container id="vagas">
+        <InputContainer style={{ flexDirection: "row" }}>
+          <Label red>Ordenar por:</Label>
+          <Select
+            style={{ width: 150, marginBottom: "20px" }}
+            onChange={(value) => {
+              setOrder(value);
+              setPageNumber(1);
+            }}
+            defaultValue="date"
+            bordered={false}
+          >
+            <option value="date">Mais novos</option>
+            <option value="title">Titulo em ordem alfabética</option>
+            <option value="company">Empresa em ordem alfabética</option>
+          </Select>
+        </InputContainer>
         <JobList>
-          <InputContainer style={{ flexDirection: "row" }}>
-            <Label red>Ordenar por:</Label>
-            <Select
-              style={{ width: 150, marginBottom: "20px" }}
-              onChange={(value) => {
-                setOrder(value);
-                setPageNumber(1);
-              }}
-              defaultValue="date"
-              bordered={false}
-            >
-              <option value="date">Mais novos</option>
-              <option value="title">Titulo em ordem alfabética</option>
-              <option value="company">Empresa em ordem alfabética</option>
-            </Select>
-          </InputContainer>
           {!isLoading &&
             jobData.results.map((job) => (
               <JobCard
@@ -142,7 +142,7 @@ function JobSearch() {
         <Pagination
           defaultCurrent={1}
           total={!isLoading ? jobData.count : 1}
-          pageSize={10}
+          pageSize={16}
           showSizeChanger={false}
           onChange={(page) => {
             setPageNumber(page);

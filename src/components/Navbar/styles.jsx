@@ -31,12 +31,14 @@ export const Nav = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  /* background-image: url(${background}); */
   background-color: ${COLORS.darkPink};
   background-position: center;
   background-size: contain;
   padding: 30px 0px 50px 0px;
-  /* filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2)); */
+
+  @media (max-width: 900px) {
+    padding: 30px 0px 15px 0px;
+    }
 `;
 
 export const Container = styled.div`

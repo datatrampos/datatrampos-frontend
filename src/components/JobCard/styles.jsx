@@ -5,12 +5,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-bottom: 20px;
   padding: 24px 24px;
   border-radius: 10px;
   border: 1px solid ${COLORS.darkRed};
   background-color: ${COLORS.white};
   cursor: pointer;
+  margin: 10px 7px;
 
   &:hover {
     box-shadow: -1px 3px 7px 2px rgb(0, 0, 0, 0.1);

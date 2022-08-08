@@ -73,20 +73,34 @@ function JobSearch() {
             >
               <option value="">Todas</option>
               {!loadingCompanies &&
-                companiesOptions.map((company) => (
-                  <option value={company.id}>
-                    {company.logo ? (
-                      <OptionLogo
-                        src={`data:image/jpeg;base64,${company.logo}`}
-                        alt={`${company.name}-logo`}
-                      />
-                    ) : (
-                      <NoLogo>{company.name.slice(0, 2).toUpperCase()}</NoLogo>
-                    )}
+                companiesOptions
+                  .sort((a, b) => {
+                    let companyA = a.name.toLowerCase(),
+                      companyB = b.name.toLowerCase();
+                    if (companyA < companyB) {
+                      return -1;
+                    }
+                    if (companyA > companyB) {
+                      return 1;
+                    }
+                    return 0;
+                  })
+                  .map((company) => (
+                    <option value={company.id}>
+                      {company.logo ? (
+                        <OptionLogo
+                          src={`data:image/jpeg;base64,${company.logo}`}
+                          alt={`${company.name}-logo`}
+                        />
+                      ) : (
+                        <NoLogo>
+                          {company.name.slice(0, 2).toUpperCase()}
+                        </NoLogo>
+                      )}
 
-                    {company.name}
-                  </option>
-                ))}
+                      {company.name}
+                    </option>
+                  ))}
             </Select>
           </InputContainer>
           <InputContainer>

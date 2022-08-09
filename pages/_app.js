@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient())
   return (
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
+      {/* <Hydrate state={pageProps.dehydratedState}> */}
         <Component {...pageProps} />
-      </Hydrate>
+      {/* </Hydrate> */}
     </QueryClientProvider>
   );
 }

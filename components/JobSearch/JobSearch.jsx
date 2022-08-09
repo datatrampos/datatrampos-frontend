@@ -19,19 +19,19 @@ import {
   NoLogo,
 } from "./styles";
 
-function JobSearch(props) {
-  const [pageNumber, setPageNumber] = useState(1);
-  const [company, setCompany] = useState("");
-  const [remote, setRemote] = useState("");
-  const [orderBy, setOrder] = useState("date");
-  const [location, setLocation] = useState("");
+function JobSearch() {
+  const [pageNumber, setPageNumber] = useState();
+  const [company, setCompany] = useState();
+  const [remote, setRemote] = useState();
+  const [orderBy, setOrder] = useState();
+  const [location, setLocation] = useState();
 
   const { data: jobData, isLoading } = useQuery(
-    ["jobs", pageNumber, company, remote, orderBy, location],
-    () => fetchJobs(pageNumber, company, remote, orderBy, location),
-    { initialData: props.jobs }
+    ["jobs"],
+    fetchJobs
   );
-  console.log(isLoading);
+
+  console.log(isLoading)
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery(
     ["companies"],
@@ -171,18 +171,4 @@ function JobSearch(props) {
     </>
   );
 }
-
-export async function getStaticProps() {
-  const pageNumber = 1;
-  const orderBy = "date";
-
-  jobs = await fetchJobs(pageNumber, orderBy);
-  console.log(jobs);
-  return {
-    props: {
-      jobs,
-    },
-  };
-}
-
 export default JobSearch;

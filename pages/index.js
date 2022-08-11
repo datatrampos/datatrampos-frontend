@@ -25,19 +25,17 @@ import {
 } from "./styles";
 
 export default function Home(props) {
-  const [pageNumber, setPageNumber] = useState();
+  const [page, setPageNumber] = useState();
   const [company, setCompany] = useState();
   const [remote, setRemote] = useState();
   const [orderBy, setOrder] = useState();
   const [location, setLocation] = useState();
 
-  const { data: jobData, isLoading, refetch:refetchJobs } = useQuery(
-    ["jobs"],
-    () => fetchJobs(pageNumber, company, remote, orderBy, location),
+  const { data: jobData, isLoading } = useQuery(
+    ["jobs", page, company, remote, orderBy, location],
+    ()=>fetchJobs(page, company, remote, orderBy, location),
     { initialData: props.jobs }
   );
-
-  console.log(props.jobs);
   console.log(isLoading);
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery(
@@ -65,7 +63,6 @@ export default function Home(props) {
                 onChange={(value) => {
                   setRemote(value);
                   setPageNumber(1);
-                  refetchJobs({pageNumber, company, remote, orderBy, location})
                 }}
                 defaultValue=""
               >
@@ -186,11 +183,12 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const jobs = await fetchJobs();
+
+  const jobs = await fetchJobs('1', '','','date','')
 
   return {
     props: {
-      jobs,
+      jobs
     },
   };
 }

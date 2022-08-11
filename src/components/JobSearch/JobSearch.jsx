@@ -73,7 +73,7 @@ function JobSearch() {
               }}
               defaultValue=""
             >
-              <option value="">Todas</option>
+              <option key="" value="">Todas</option>
               {!loadingCompanies &&
                 companiesOptions
                   .sort((a, b) => {
@@ -116,7 +116,7 @@ function JobSearch() {
               }}
               defaultValue=""
             >
-              <option value="">Todas</option>
+              <option key="" value="">Todas</option>
               {!loadingLocations &&
                 locations["locations"].map((city, index) => (
                   <option key={index} value={city}>
@@ -139,9 +139,9 @@ function JobSearch() {
             defaultValue="date"
             bordered={false}
           >
-            <option value="date">Mais novos</option>
-            <option value="title">Titulo em ordem alfabética</option>
-            <option value="company">Empresa em ordem alfabética</option>
+            <option key="date" value="date">Mais novos</option>
+            <option key="title" value="title">Titulo em ordem alfabética</option>
+            <option key="company" value="company">Empresa em ordem alfabética</option>
           </Select>
         </InputContainer>
         <JobList>

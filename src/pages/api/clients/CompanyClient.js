@@ -1,4 +1,4 @@
-import { axiosInstance } from "../core/apiConfig";
+import { axiosInstance } from "../../../services/apiConfig";
 
 async function fetchCompanies() {
   const { data } = await axiosInstance.get(`companies/`);

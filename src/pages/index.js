@@ -25,7 +25,7 @@ import {
 } from "./styles";
 
 export default function Home(props) {
-  const [page, setPageNumber] = useState();
+  const [page, setPageNumber] = useState(1);
   const [company, setCompany] = useState();
   const [remote, setRemote] = useState();
   const [orderBy, setOrder] = useState();
@@ -66,9 +66,9 @@ export default function Home(props) {
                 }}
                 defaultValue=""
               >
-                <option value="">Qualquer</option>
-                <option value="true">Remoto</option>
-                <option value="false">Presencial</option>
+                <option key="" value="">Qualquer</option>
+                <option key="true" value="true">Remoto</option>
+                <option key="false"value="false">Presencial</option>
               </Select>
             </InputContainer>
             <InputContainer>
@@ -81,7 +81,7 @@ export default function Home(props) {
                 }}
                 defaultValue=""
               >
-                <option value="">Todas</option>
+                <option key="" value="">Todas</option>
                 {!loadingCompanies &&
                   companiesOptions
                     .sort((a, b) => {
@@ -124,7 +124,7 @@ export default function Home(props) {
                 }}
                 defaultValue=""
               >
-                <option value="">Todas</option>
+                <option key="" value="">Todas</option>
                 {!loadingLocations &&
                   locations["locations"].map((city, index) => (
                     <option key={index} value={city}>
@@ -147,9 +147,9 @@ export default function Home(props) {
               defaultValue="date"
               bordered={false}
             >
-              <option value="date">Mais novos</option>
-              <option value="title">Titulo em ordem alfabética</option>
-              <option value="company">Empresa em ordem alfabética</option>
+              <option key="date" value="date">Mais novos</option>
+              <option key="title" value="title">Titulo em ordem alfabética</option>
+              <option key="company" value="company">Empresa em ordem alfabética</option>
             </Select>
           </InputContainer>
           <JobList>

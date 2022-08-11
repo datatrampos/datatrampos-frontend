@@ -1,22 +1,14 @@
+import { Home, LocationCity } from "@mui/icons-material";
 import React from "react";
 import {
-  Container,
-  JobCardInfo,
-  CompanyName,
-  CompanyLogo,
-  JobTitle,
-  CardItemsContainer,
-  CardItem,
   CardButton,
-  CardInfoContainer,
-  CompanyWithoutLogo,
-  LogoContainer,
+  CardInfoContainer, CardItem, CardItemsContainer, CompanyLogo, CompanyName, CompanyWithoutLogo, Container,
+  JobCardInfo, JobTitle, LogoContainer
 } from "./styles";
-import {LocationCity, Home} from "@mui/icons-material";
 
 export const JobCard = (props) => {
   return (
-    <Container>
+    <Container key={props.key}>
       <CardInfoContainer>
         <LogoContainer>
           {props.logo ? (
@@ -40,13 +32,13 @@ export const JobCard = (props) => {
           </JobTitle>
           <CardItemsContainer>
             {props.location && (
-              <CardItem>
+              <CardItem key={props.location}>
                 <LocationCity style={{ width: "15px", marginRight: "5px" }} />
                 {props.location}
               </CardItem>
             )}
             {props.remote === true && (
-              <CardItem>
+              <CardItem key={props.remoto}>
                 <Home style={{ width: "15px", marginRight: "5px" }} />
                 Aceita remoto
               </CardItem>

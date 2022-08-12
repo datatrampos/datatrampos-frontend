@@ -47,7 +47,7 @@ function JobSearch() {
     <>
       <JobFilter>
         <PageTitle>Pesquisar vagas</PageTitle>
-        <Row center wrap justifyCenter>
+        <Row center="true" wrap="true" justifyCenter="true">
           <InputContainer>
             <Label>Ambiente de trabalho:</Label>
             <Select

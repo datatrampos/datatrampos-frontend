@@ -2,14 +2,14 @@
   "name": "datatrampos-frontend",
   "description": "A website that shows the best open vacancies for Data people.",
   "version": "0.1.0",
-  "engines":{
-    "node":"16.x"
+  "engines": {
+    "node": "16.x"
   },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "axios": "^0.27.2",
     "babel-plugin-styled-components": "^2.0.7",
     "next": "12.2.4",
+    "npm": "^8.17.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.5"

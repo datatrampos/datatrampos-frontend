@@ -58,7 +58,7 @@ export default function Home(props) {
           <JobsContainer id="vagas">
             <PageTitle>Pesquisar vagas</PageTitle>
             <JobFilter>
-              <Row center wrap justifyCenter>
+              <Row center="true" wrap="true" justifyCenter="true">
                 <InputContainer>
                   <Label>Ambiente de trabalho:</Label>
                   <Select
@@ -69,15 +69,15 @@ export default function Home(props) {
                     }}
                     defaultValue=""
                   >
-                    <option key="" value="">
+                    <Select.Option key="" value="">
                       Qualquer
-                    </option>
-                    <option key="true" value="true">
+                    </Select.Option>
+                    <Select.Option key="true" value="true">
                       Remoto
-                    </option>
-                    <option key="false" value="false">
+                    </Select.Option>
+                    <Select.Option key="false" value="false">
                       Presencial/Híbrido
-                    </option>
+                    </Select.Option>
                   </Select>
                 </InputContainer>
                 <InputContainer>
@@ -90,9 +90,9 @@ export default function Home(props) {
                     }}
                     defaultValue=""
                   >
-                    <option key="" value="">
+                    <Select.Option key="" value="">
                       Todas
-                    </option>
+                    </Select.Option>
                     {!loadingCompanies &&
                       companiesOptions
                         .sort((a, b) => {
@@ -107,7 +107,7 @@ export default function Home(props) {
                           return 0;
                         })
                         .map((company) => (
-                          <option key={company.id} value={company.id}>
+                          <Select.Option key={company.id} value={company.id}>
                             <OptionContainer>
                               <span>{company.name}</span>
                               {company.logo ? (
@@ -125,7 +125,7 @@ export default function Home(props) {
                                 </NoLogo>
                               )}
                             </OptionContainer>
-                          </option>
+                          </Select.Option>
                         ))}
                   </Select>
                 </InputContainer>
@@ -139,14 +139,14 @@ export default function Home(props) {
                     }}
                     defaultValue=""
                   >
-                    <option key="" value="">
+                    <Select.Option key="" value="">
                       Todas
-                    </option>
+                    </Select.Option>
                     {!loadingLocations &&
                       locations["locations"].map((city, index) => (
-                        <option key={index} value={city}>
+                        <Select.Option key={index} value={city}>
                           {city}
-                        </option>
+                        </Select.Option>
                       ))}
                   </Select>
                 </InputContainer>
@@ -164,15 +164,15 @@ export default function Home(props) {
                 defaultValue="date"
                 bordered={false}
               >
-                <option key="date" value="date">
+                <Select.Option key="date" value="date">
                   Mais novos
-                </option>
-                <option key="title" value="title">
+                </Select.Option>
+                <Select.Option key="title" value="title">
                   Titulo em ordem alfabética
-                </option>
-                <option key="company" value="company">
+                </Select.Option>
+                <Select.Option key="company" value="company">
                   Empresa em ordem alfabética
-                </option>
+                </Select.Option>
               </Select>
             </InputContainer>
             {isLoading ? (
@@ -183,7 +183,7 @@ export default function Home(props) {
                   {!isLoading &&
                     jobData.results.map((job) => (
                       <JobCard
-                        key={job.id}
+                        key={job.url}
                         logo={job?.company?.logo}
                         companyName={job.company.name}
                         url={job.url}

@@ -32,27 +32,28 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <link rel="shortcut-icon" href="%PUBLIC_URL%/favicon.ico" />
+          
+          <link rel="shortcut-icon" href="/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="%PUBLIC_URL%/apple-touch-icon.png"
+            href="/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="%PUBLIC_URL%/favicon-32x32.png"
+            href="/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="%PUBLIC_URL%/favicon-16x16.png"
+            href="/favicon-16x16.png"
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap"
           />
           {this.props.styleTags}
         </Head>

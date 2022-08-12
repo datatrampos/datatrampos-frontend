@@ -1,6 +1,10 @@
 {
   "name": "datatrampos-frontend",
+  "description": "A website that shows the best open vacancies for Data people.",
   "version": "0.1.0",
+  "engines":{
+    "node":"16.x"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

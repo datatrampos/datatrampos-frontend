@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
 
@@ -24,7 +25,7 @@ export const JobFilter = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${COLORS.darkRed};
+  background-color: ${COLORS.darkGrey};
   width: 100%;
   padding: 40px 20px;
 `;
@@ -36,14 +37,12 @@ export const InputContainer = styled.span`
 `;
 
 export const Label = styled.label`
-  color: ${(props) => (props.red ? COLORS.darkRed : COLORS.white)};
+  color: ${(props) => (props.red ? COLORS.darkGrey : COLORS.white)};
   font-size: 17px;
   margin-right: 7px;
 `;
 
-export const Select = styled.select``;
-
-export const OptionLogo = styled.img`
+export const OptionLogo = styled(Image)`
   width: 30px;
   margin-right: 5px;
   border-radius: 50%;

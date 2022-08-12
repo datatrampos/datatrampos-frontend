@@ -4,9 +4,9 @@ import { COLORS } from "../styles/colors";
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: ${(props) => (props.center ? "center" : "baseline")};
-  flex-wrap: ${(props) => (props.wrap ? "wrap" : "nowrap")};
-  justify-content:${(props) => (props.justifyCenter ? "center" : "baseline")}; ;
+  align-items: ${(props) => (!props.center ? "baseline" : "center")};
+  flex-wrap: ${(props) => (!props.wrap ? "nowrap" : "wrap")};
+  justify-content:${(props) => (!props.justifyCenter ? "baseline" : "center")}; ;
 `;
 
 export const Col = styled.div`
@@ -68,9 +68,13 @@ export const SecondaryButton = styled.a`
   }
 `;
 
-export const PageTitle = styled.p`
-  font-size: 35px;
+export const PageTitle = styled.h2`
+  font-size: 46px;
   font-weight: 100;
-  color: ${COLORS.white};
   text-align: center;
+  color: ${COLORS.darkPink};
+
+  @media (max-width: 900px) {
+    font-size: 36px;
+  }
 `;

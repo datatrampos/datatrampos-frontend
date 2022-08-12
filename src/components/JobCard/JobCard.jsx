@@ -1,28 +1,34 @@
+import { Home, LocationCity } from "@mui/icons-material";
 import React from "react";
 import {
-  Container,
-  JobCardInfo,
-  CompanyName,
-  JobTitle,
-  CardItemsContainer,
-  CardItem,
   CardButton,
   CardInfoContainer,
+  CardItem,
+  CardItemsContainer,
+  CompanyLogo,
+  CompanyName,
   CompanyWithoutLogo,
+  Container,
+  JobCardInfo,
+  JobTitle,
   LogoContainer,
+  ImageContainer
 } from "./styles";
-import { Home, LocationCity } from "@material-ui/icons";
 
 export const JobCard = (props) => {
   return (
-    <Container>
+    <Container key={props.id}>
       <CardInfoContainer>
         <LogoContainer>
           {props.logo ? (
-            <img
-              src={`data:image/jpeg;base64,${props.logo}`}
-              alt={`${props.companyName}-logo`}
-            />
+            <ImageContainer>
+              <CompanyLogo
+                src={`data:image/jpeg;base64,${props.logo}`}
+                alt={`${props.companyName}-logo`}
+                layout="fill"
+                objectFit="contain"
+              />
+            </ImageContainer>
           ) : (
             <CompanyWithoutLogo>
               {props.companyName.slice(0, 2).toUpperCase()}
@@ -37,13 +43,13 @@ export const JobCard = (props) => {
           </JobTitle>
           <CardItemsContainer>
             {props.location && (
-              <CardItem>
+              <CardItem key={props.location}>
                 <LocationCity style={{ width: "15px", marginRight: "5px" }} />
                 {props.location}
               </CardItem>
             )}
             {props.remote === true && (
-              <CardItem>
+              <CardItem key={props.remoto}>
                 <Home style={{ width: "15px", marginRight: "5px" }} />
                 Aceita remoto
               </CardItem>

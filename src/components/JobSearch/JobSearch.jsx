@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery, QueryClient, dehydrate } from "@tanstack/react-query";
 
 import "antd/dist/antd.css";
 import { Pagination, Select } from "antd";
 
 import { PageTitle, Row } from "../Utils";
-import { fetchJobs, fetchLocations } from "../../api/clients/JobClient";
-import fetchCompanies from "../../api/clients/CompanyClient";
+import { fetchJobs, fetchLocations } from "../../pages/api/clients/JobClient";
+import fetchCompanies from "../../pages/api/clients/CompanyClient";
 import { JobCard } from "../JobCard/JobCard";
 
 import {
@@ -20,16 +20,18 @@ import {
 } from "./styles";
 
 function JobSearch() {
-  const [pageNumber, setPageNumber] = useState(1);
-  const [company, setCompany] = useState("");
-  const [remote, setRemote] = useState("");
-  const [orderBy, setOrder] = useState("date");
-  const [location, setLocation] = useState("");
+  const [pageNumber, setPageNumber] = useState();
+  const [company, setCompany] = useState();
+  const [remote, setRemote] = useState();
+  const [orderBy, setOrder] = useState();
+  const [location, setLocation] = useState();
 
   const { data: jobData, isLoading } = useQuery(
-    ["jobs", pageNumber, company, remote, orderBy, location],
-    () => fetchJobs(pageNumber, company, remote, orderBy, location)
+    ["jobs"],
+    fetchJobs
   );
+
+  console.log(isLoading)
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery(
     ["companies"],
@@ -45,7 +47,7 @@ function JobSearch() {
     <>
       <JobFilter>
         <PageTitle>Pesquisar vagas</PageTitle>
-        <Row center wrap justifyCenter>
+        <Row center="true" wrap="true" justifyCenter="true">
           <InputContainer>
             <Label>Ambiente de trabalho:</Label>
             <Select
@@ -71,7 +73,7 @@ function JobSearch() {
               }}
               defaultValue=""
             >
-              <option value="">Todas</option>
+              <option key="" value="">Todas</option>
               {!loadingCompanies &&
                 companiesOptions
                   .sort((a, b) => {
@@ -86,19 +88,20 @@ function JobSearch() {
                     return 0;
                   })
                   .map((company) => (
-                    <option value={company.id}>
+                    <option key={company.id} value={company.id}>
                       {company.logo ? (
                         <OptionLogo
                           src={`data:image/jpeg;base64,${company.logo}`}
                           alt={`${company.name}-logo`}
+                          width={30}
+                          height={30}
                         />
                       ) : (
                         <NoLogo>
                           {company.name.slice(0, 2).toUpperCase()}
                         </NoLogo>
                       )}
-
-                      {company.name}
+                      <span>{company.name}</span>
                     </option>
                   ))}
             </Select>
@@ -113,10 +116,12 @@ function JobSearch() {
               }}
               defaultValue=""
             >
-              <option value="">Todas</option>
+              <option key="" value="">Todas</option>
               {!loadingLocations &&
                 locations["locations"].map((city, index) => (
-                  <option value={city}>{city}</option>
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
                 ))}
             </Select>
           </InputContainer>
@@ -134,9 +139,9 @@ function JobSearch() {
             defaultValue="date"
             bordered={false}
           >
-            <option value="date">Mais novos</option>
-            <option value="title">Titulo em ordem alfabética</option>
-            <option value="company">Empresa em ordem alfabética</option>
+            <option key="date" value="date">Mais novos</option>
+            <option key="title" value="title">Titulo em ordem alfabética</option>
+            <option key="company" value="company">Empresa em ordem alfabética</option>
           </Select>
         </InputContainer>
         <JobList>
@@ -166,5 +171,4 @@ function JobSearch() {
     </>
   );
 }
-
 export default JobSearch;

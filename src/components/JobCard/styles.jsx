@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
+import Image from "next/image";
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +8,6 @@ export const Container = styled.div`
   width: 300px;
   padding: 24px 24px;
   border-radius: 10px;
-  border: 1px solid ${COLORS.darkRed};
   background-color: ${COLORS.white};
   cursor: pointer;
   margin: 10px 7px;
@@ -21,15 +21,22 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: baseline;
   }
+`;
 
-  img {
-    width: 60px;
-    border-radius: 10px;
+export const ImageContainer = styled.div`
+  position: relative;
+  width:60px;
+  height:60px;
 
-    @media (max-width: 900px) {
-      width: 50px;
-    }
+  @media (max-width: 900px) {
+    width:50px;
+    height:50px;
   }
+`;
+
+export const CompanyLogo = styled(Image)`
+  border-radius: 10px;
+
 `;
 
 export const CompanyWithoutLogo = styled.div`
@@ -94,7 +101,7 @@ export const CardButton = styled.a`
   min-width: 165px;
   border-radius: 10px;
   color: white !important ;
-  background-color: ${COLORS.darkRed};
+  background-color: ${COLORS.darkGreyCian};
   text-align: center;
   font-weight: 800;
 
@@ -112,7 +119,7 @@ export const CardButton = styled.a`
 export const CardItem = styled.div`
   display: flex;
   flex-direction: row;
-  color: ${COLORS.darkRed};
+  color: ${COLORS.darkGreyCian};
   font-size: 14px;
   margin-top: 5px;
   margin-right: 10px;
@@ -139,7 +146,7 @@ export const LogoContainer = styled.a`
 
 export const JobTitle = styled.a`
   font-size: 18px;
-  color: ${COLORS.darkRed};
+  color: ${COLORS.darkGreyCian};
   font-weight: 800;
   text-decoration: none;
   height: 100px;

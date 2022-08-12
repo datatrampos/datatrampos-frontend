@@ -1,18 +1,23 @@
-import Logo from "../../assets/datatrampos-text.svg";
-import { Nav, ImageContainer, Container } from "./styles";
+import Image from "next/image";
+import { Nav, ImageContainer, Container, Logo } from "./styles";
+import Link from "next/link";
 
 function Navbar() {
   return (
     <Container>
-      <ImageContainer>
-        <Nav>
-          <div>
-            <a href="/">
-              <img src={Logo} alt="datatrampos-logo-title" />
-            </a>
-          </div>
-        </Nav>
-      </ImageContainer>
+      <Nav>
+        <div>
+          <Link href="/">
+            <ImageContainer>
+              <Image
+                src="/assets/datatrampos-text-dark-pink.svg"
+                alt="datatrampos-logo-title"
+                layout="fill"
+              />
+            </ImageContainer>
+          </Link>
+        </div>
+      </Nav>
     </Container>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { COLORS } from "../styles/colors";
+import { COLORS } from "./colors";
 
 export const JobList = styled.div`
   display: flex;

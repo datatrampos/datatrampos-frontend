@@ -24,7 +24,7 @@ import {
   FeaturedJobsContainer,
   OptionLogoContainer,
   OptionContainer,
-} from "./styles";
+} from "../styles/home";
 
 export default function Home(props) {
   const [page, setPageNumber] = useState(1);
@@ -38,7 +38,6 @@ export default function Home(props) {
     () => fetchJobs(page, company, remote, orderBy, location),
     { initialData: page == 1 ? props.jobs : undefined }
   );
-  console.log(isLoading);
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery(
     ["companies"],

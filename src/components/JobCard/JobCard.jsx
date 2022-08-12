@@ -2,22 +2,33 @@ import { Home, LocationCity } from "@mui/icons-material";
 import React from "react";
 import {
   CardButton,
-  CardInfoContainer, CardItem, CardItemsContainer, CompanyLogo, CompanyName, CompanyWithoutLogo, Container,
-  JobCardInfo, JobTitle, LogoContainer
+  CardInfoContainer,
+  CardItem,
+  CardItemsContainer,
+  CompanyLogo,
+  CompanyName,
+  CompanyWithoutLogo,
+  Container,
+  JobCardInfo,
+  JobTitle,
+  LogoContainer,
+  ImageContainer
 } from "./styles";
 
 export const JobCard = (props) => {
   return (
-    <Container key={props.key}>
+    <Container key={props.id}>
       <CardInfoContainer>
         <LogoContainer>
           {props.logo ? (
-            <CompanyLogo
-              src={`data:image/jpeg;base64,${props.logo}`}
-              alt={`${props.companyName}-logo`}
-              width={60}
-              height={60}
-            />
+            <ImageContainer>
+              <CompanyLogo
+                src={`data:image/jpeg;base64,${props.logo}`}
+                alt={`${props.companyName}-logo`}
+                layout="fill"
+                objectFit="contain"
+              />
+            </ImageContainer>
           ) : (
             <CompanyWithoutLogo>
               {props.companyName.slice(0, 2).toUpperCase()}

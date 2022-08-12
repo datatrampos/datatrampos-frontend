@@ -1,19 +1,12 @@
 import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
-import Image from "next/image";
+
 
 export const Nav = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: center;
-  div {
-    width: 900px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
 
   a {
     text-decoration: none;
@@ -22,25 +15,20 @@ export const Nav = styled.div`
   }
 `;
 
-export const Logo = styled(Image)`
-  width: 400px;
+
+
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 427px;
+  height: 64px;
 
   @media (max-width: 900px) {
     width: 300px;
-  }
-`;
-
-export const ImageContainer = styled.div`
-  background-color: ${COLORS.darkPink};
-  background-position: center;
-  background-size: contain;
-  padding: 30px 0px 50px 0px;
-
-  @media (max-width: 900px) {
-    padding: 30px 0px 15px 0px;
+    height: 40px;
   }
 `;
 
 export const Container = styled.div`
-  /* background-color: ${COLORS.darkRed}; */
+  padding-top:50px;
+  background-color: ${COLORS.white};
 `;

@@ -1,34 +1,61 @@
 import styled from "styled-components";
 import { COLORS } from "../../styles/colors";
-import Image from "next/image";
 
-export const ImageContainer = styled(Image)`
-
-  width: 510px;
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 525px;
+  height: 325px;
+  margin-bottom: 20px;
 
   @media (max-width: 900px) {
-    width: 90%;
+    width: 300px;
+    height: 200px;
   }
 `;
 
 export const Container = styled.div`
-  background-image: linear-gradient(${COLORS.darkPink}, ${COLORS.darkRed});
+  background-color: ${COLORS.white};
   padding: 75px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    padding: 25px;
+  }
 `;
 
-export const TextPresentation = styled.h1`
-  color: ${COLORS.white};
-  width: 400px;
-  font-weight: 100;
+export const HeaderPresentation = styled.h1`
+  color: ${COLORS.darkGrey};
+  width: 900px;
+  font-weight: 800;
   font-size: 40px;
   margin-right: 30px;
+  text-align: center;
+  margin-top: 20px;
 
-  strong {
-    font-weight: bold;
+  @media (max-width: 900px) {
+    width: 95%;
+    font-size: 32px;
+  }
+`;
+
+export const TextPresentation = styled.p`
+  color: ${COLORS.darkGreyCian};
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  width: 900px;
+
+  @media (max-width: 900px) {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: ${COLORS.darkGrey};
   }
 `;

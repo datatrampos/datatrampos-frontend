@@ -1,11 +1,17 @@
 import { GitHub, Instagram } from "@mui/icons-material";
-import { Logo, FooterContainer } from "./styles";
+import { Logo, FooterContainer, ImageContainer } from "./styles";
 
 function FooterInfo() {
   return (
     <>
       <FooterContainer>
-        <Logo src="/assets/datatrampos-text.svg" alt={"datatrampos-logo-title"} width={300} height={300}/>
+        <ImageContainer>
+          <Logo
+            src="/assets/datatrampos-text.svg"
+            alt={"datatrampos-logo-title"}
+            layout="fill"
+          />
+        </ImageContainer>
         <p>As melhores oportunidades em Dados nas melhores empresas!</p>
         {/* <div>
         <a href="/about">Sobre nós</a>

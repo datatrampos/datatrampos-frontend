@@ -68,9 +68,13 @@ export const SecondaryButton = styled.a`
   }
 `;
 
-export const PageTitle = styled.p`
-  font-size: 35px;
+export const PageTitle = styled.h2`
+  font-size: 46px;
   font-weight: 100;
-  color: ${COLORS.white};
   text-align: center;
+  color: ${COLORS.darkPink};
+
+  @media (max-width: 900px) {
+    font-size: 36px;
+  }
 `;

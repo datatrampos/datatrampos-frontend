@@ -5,15 +5,19 @@ import Link from "next/link";
 function Navbar() {
   return (
     <Container>
-      <ImageContainer>
-        <Nav>
-          <div>
-            <Link href="/">
-              <Logo src='/assets/datatrampos-text.svg' alt="datatrampos-logo-title" width={300} height={300}/>
-            </Link>
-          </div>
-        </Nav>
-      </ImageContainer>
+      <Nav>
+        <div>
+          <Link href="/">
+            <ImageContainer>
+              <Image
+                src="/assets/datatrampos-text-dark-pink.svg"
+                alt="datatrampos-logo-title"
+                layout="fill"
+              />
+            </ImageContainer>
+          </Link>
+        </div>
+      </Nav>
     </Container>
   );
 }

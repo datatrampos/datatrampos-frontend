@@ -1,8 +1,9 @@
 import Image from "next/image";
-import styled from "styled-components"
+import styled from "styled-components";
+import { COLORS } from "../../styles/colors";
 
 export const FooterContainer = styled.div`
-  background-color: #f70656;
+  background-color: ${COLORS.darkGrey};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,4 +35,10 @@ export const FooterContainer = styled.div`
 
 export const Logo = styled(Image)`
   width: 300px;
+`;
+
+export const ImageContainer = styled.div`
+  width: 226px;
+  height: 34px;
+  position: relative;
 `;

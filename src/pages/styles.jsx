@@ -9,50 +9,74 @@ export const JobList = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Container = styled.div`
-  background-color: white;
+export const JobsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 50px 0 200px 0;
 `;
 
 export const JobFilter = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: ${COLORS.darkRed};
+  margin: 30px 0;
   width: 100%;
-  padding: 40px 20px;
 `;
 
 export const InputContainer = styled.span`
   display: flex;
   flex-direction: column;
   margin-right: 30px;
+
+  option,span{
+    color: ${COLORS.darkGreyCian};
+    font-weight: 100;
+  }
 `;
 
 export const Label = styled.label`
-  color: ${(props) => (props.red ? COLORS.darkRed : COLORS.white)};
+  color: ${COLORS.light};
   font-size: 17px;
   margin-right: 7px;
 `;
 
 export const OptionLogo = styled(Image)`
   width: 30px;
-  margin-right: 5px;
-  border-radius: 50%;
+  border-radius: 5px;
 `;
 
 export const NoLogo = styled.span`
   color: ${COLORS.darkPink};
   text-align: center;
-  margin-right: 5px;
   font-weight: 700;
   font-size: 18px;
   width: 30px;
+`;
+
+export const FeaturedJobsContainer = styled.div`
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    ${COLORS.white} 0%,
+    ${COLORS.lightGrey} 50%,
+    ${COLORS.white} 100%
+  );
+`;
+
+export const OptionLogoContainer = styled.div`
+  position: relative;
+  width: 30px;
+  height: 30px;
+`;
+
+export const OptionContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  font-weight: 500;
 `;

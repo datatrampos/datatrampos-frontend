@@ -19,10 +19,10 @@ function FooterInfo() {
         <a href="/jobs">Vagas</a>
         <span>•</span>
         <a href="/companies">Empresas</a>
-      </div> */}
+        </div> */}
         <div>
-          <a href="https://instagram.com/datatrampos">
-            <Instagram style={{ marginRight: "10px" }} />
+          <a href="https://instagram.com/datatrampos" style={{ marginRight: "10px" }}>
+            <Instagram />
           </a>
           <a href="https://github.com/luisgmfarias">
             <GitHub />

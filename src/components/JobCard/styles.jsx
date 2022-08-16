@@ -36,7 +36,6 @@ export const ImageContainer = styled.div`
 
 export const CompanyLogo = styled(Image)`
   border-radius: 10px;
-
 `;
 
 export const CompanyWithoutLogo = styled.div`
@@ -131,7 +130,7 @@ export const CardItem = styled.div`
   }
 `;
 
-export const LogoContainer = styled.a`
+export const LogoContainer = styled.div`
   width: 60px;
   display: flex;
   align-items: center;

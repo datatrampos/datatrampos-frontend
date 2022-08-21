@@ -3,12 +3,13 @@ import Navbar from "../components/Navbar/Navbar";
 import Presentation from "../components/Presentation/Presentation";
 import { useQuery } from "@tanstack/react-query";
 
+import Image from "next/image";
 import React, { useState } from "react";
 
 import "antd/dist/antd.css";
-import { Pagination, Select } from "antd";
+import { Pagination, Select, Radio } from "antd";
 
-import { PageTitle, Row } from "../components/Utils";
+import { LoadingSpinnerContainer, PageTitle, Row } from "../components/Utils";
 import { fetchJobs, fetchLocations } from "./api/clients/JobClient";
 import fetchCompanies from "./api/clients/CompanyClient";
 import { JobCard } from "../components/JobCard/JobCard";
@@ -28,15 +29,24 @@ import {
 
 export default function Home(props) {
   const [page, setPageNumber] = useState(1);
-  const [company, setCompany] = useState();
-  const [remote, setRemote] = useState();
-  const [orderBy, setOrder] = useState();
-  const [location, setLocation] = useState();
+  const [company, setCompany] = useState("");
+  const [remote, setRemote] = useState("");
+  const [orderBy, setOrder] = useState("date");
+  const [location, setLocation] = useState("");
 
   const { data: jobData, isLoading } = useQuery(
     ["jobs", page, company, remote, orderBy, location],
     () => fetchJobs(page, company, remote, orderBy, location),
-    { initialData: page == 1 ? props.jobs : undefined }
+    {
+      initialData:
+        page == 1 &&
+        company == "" &&
+        remote == "" &&
+        orderBy == "date" &&
+        location == ""
+          ? props.jobs
+          : undefined,
+    }
   );
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery(
@@ -56,77 +66,65 @@ export default function Home(props) {
         <Presentation />
         <FeaturedJobsContainer>
           <JobsContainer id="vagas">
-            <PageTitle>Pesquisar vagas</PageTitle>
+            <PageTitle>Encontre sua vaga</PageTitle>
             <JobFilter>
               <Row center="true" wrap="true" justifyCenter="true">
                 <InputContainer>
                   <Label>Ambiente de trabalho:</Label>
-                  <Select
-                    style={{ width: 200 }}
-                    onChange={(value) => {
-                      setRemote(value);
+                  <Radio.Group
+                    onChange={(e) => {
+                      setRemote(e.target.value);
                       setPageNumber(1);
                     }}
                     defaultValue=""
                   >
-                    <Select.Option key="" value="">
+                    <Radio.Button key="" value="">
                       Qualquer
-                    </Select.Option>
-                    <Select.Option key="true" value="true">
+                    </Radio.Button>
+                    <Radio.Button key="true" value="true">
                       Remoto
-                    </Select.Option>
-                    <Select.Option key="false" value="false">
+                    </Radio.Button>
+                    <Radio.Button key="false" value="false">
                       Presencial/Híbrido
-                    </Select.Option>
-                  </Select>
+                    </Radio.Button>
+                  </Radio.Group>
                 </InputContainer>
                 <InputContainer>
                   <Label>Empresas:</Label>
                   <Select
                     style={{ width: 200 }}
-                    onChange={(value) => {
-                      setCompany(value);
+                    onChange={(value, option) => {
+                      setCompany(option.key);
                       setPageNumber(1);
                     }}
                     defaultValue=""
+                    showSearch={true}
                   >
                     <Select.Option key="" value="">
                       Todas
                     </Select.Option>
                     {!loadingCompanies &&
-                      companiesOptions
-                        .sort((a, b) => {
-                          let companyA = a.name.toLowerCase(),
-                            companyB = b.name.toLowerCase();
-                          if (companyA < companyB) {
-                            return -1;
-                          }
-                          if (companyA > companyB) {
-                            return 1;
-                          }
-                          return 0;
-                        })
-                        .map((company) => (
-                          <Select.Option key={company.id} value={company.id}>
-                            <OptionContainer>
-                              <span>{company.name}</span>
-                              {company.logo ? (
-                                <OptionLogoContainer>
-                                  <OptionLogo
-                                    src={`data:image/jpeg;base64,${company.logo}`}
-                                    alt={`${company.name}-logo`}
-                                    layout="fill"
-                                    objectFit="contain"
-                                  />
-                                </OptionLogoContainer>
-                              ) : (
-                                <NoLogo>
-                                  {company.name.slice(0, 2).toUpperCase()}
-                                </NoLogo>
-                              )}
-                            </OptionContainer>
-                          </Select.Option>
-                        ))}
+                      companiesOptions.map((company) => (
+                        <Select.Option key={company.id} value={company.name}>
+                          <OptionContainer>
+                            <span>{company.name}</span>
+                            {company.logo ? (
+                              <OptionLogoContainer>
+                                <OptionLogo
+                                  src={`data:image/jpeg;base64,${company.logo}`}
+                                  alt={`${company.name}-logo`}
+                                  layout="fill"
+                                  objectFit="contain"
+                                />
+                              </OptionLogoContainer>
+                            ) : (
+                              <NoLogo>
+                                {company.name.slice(0, 2).toUpperCase()}
+                              </NoLogo>
+                            )}
+                          </OptionContainer>
+                        </Select.Option>
+                      ))}
                   </Select>
                 </InputContainer>
                 <InputContainer>
@@ -138,6 +136,7 @@ export default function Home(props) {
                       setPageNumber(1);
                     }}
                     defaultValue=""
+                    showSearch={true}
                   >
                     <Select.Option key="" value="">
                       Todas
@@ -176,7 +175,15 @@ export default function Home(props) {
               </Select>
             </InputContainer>
             {isLoading ? (
-              <></>
+              <LoadingSpinnerContainer>
+                <Image
+                  src="/assets/logo-spinner.gif"
+                  alt="illustration"
+                  layout="fill"
+                  objectFit="cover"
+                />
+                <span>Buscando...</span>
+              </LoadingSpinnerContainer>
             ) : (
               <>
                 <JobList>
@@ -190,6 +197,7 @@ export default function Home(props) {
                         title={job.title}
                         location={job.location}
                         remote={job.remote}
+                        date={job.date}
                       />
                     ))}
                 </JobList>

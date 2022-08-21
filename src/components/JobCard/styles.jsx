@@ -118,6 +118,7 @@ export const CardButton = styled.a`
 export const CardItem = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   color: ${COLORS.darkGreyCian};
   font-size: 14px;
   margin-top: 5px;
@@ -130,16 +131,15 @@ export const CardItem = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div`
-  width: 60px;
+export const TopContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 60px;
+  justify-content: space-between;
+  width: 100%;
 
-  @media (max-width: 900px) {
-    width: 50px;
-    heigth: 50px;
+  p{
+    color: ${COLORS.darkGreyCian};
+    font-size: 12px;
   }
 `;
 
@@ -148,6 +148,7 @@ export const JobTitle = styled.a`
   color: ${COLORS.darkGreyCian};
   font-weight: 800;
   text-decoration: none;
+  width: 100%;
   height: 100px;
 
   &:hover {

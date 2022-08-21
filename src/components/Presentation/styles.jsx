@@ -3,8 +3,8 @@ import { COLORS } from "../../styles/colors";
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 525px;
-  height: 325px;
+  width: 395px;
+  height: 245px;
   margin-bottom: 20px;
 
   @media (max-width: 900px) {

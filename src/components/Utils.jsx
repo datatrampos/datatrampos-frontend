@@ -6,7 +6,8 @@ export const Row = styled.div`
   flex-direction: row;
   align-items: ${(props) => (!props.center ? "baseline" : "center")};
   flex-wrap: ${(props) => (!props.wrap ? "nowrap" : "wrap")};
-  justify-content:${(props) => (!props.justifyCenter ? "baseline" : "center")}; ;
+  justify-content: ${(props) =>
+    !props.justifyCenter ? "baseline" : "center"}; ;
 `;
 
 export const Col = styled.div`
@@ -76,5 +77,22 @@ export const PageTitle = styled.h2`
 
   @media (max-width: 900px) {
     font-size: 36px;
+  }
+`;
+
+export const LoadingSpinnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border-radius: 10px;
+  background-color: ${COLORS.white};
+  position: relative;
+  height: 240px;
+  span{
+    color: ${COLORS.darkGreyCian};
+    font-size: 28px;
+    text-align: center;
+    font-weight: 800;
   }
 `;

@@ -11,15 +11,17 @@ import {
   Container,
   JobCardInfo,
   JobTitle,
-  LogoContainer,
+  TopContainer,
   ImageContainer
 } from "./styles";
+
+import {handleSinceData} from "../../commons"
 
 export const JobCard = (props) => {
   return (
     <Container key={props.id}>
       <CardInfoContainer>
-        <LogoContainer>
+        <TopContainer>
           {props.logo ? (
             <ImageContainer>
               <CompanyLogo
@@ -34,7 +36,8 @@ export const JobCard = (props) => {
               {props.companyName.slice(0, 2).toUpperCase()}
             </CompanyWithoutLogo>
           )}
-        </LogoContainer>
+          <p>{handleSinceData(props.date)}</p>
+        </TopContainer>
 
         <JobCardInfo>
           <CompanyName>{props.companyName}</CompanyName>

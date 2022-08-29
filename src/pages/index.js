@@ -209,6 +209,7 @@ export default function Home(props) {
                   onChange={(page) => {
                     setPageNumber(page);
                   }}
+                  size="small"
                 />
               </>
             )}

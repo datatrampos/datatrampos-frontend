@@ -35,6 +35,10 @@ export const InputContainer = styled.span`
     color: ${COLORS.darkGreyCian};
     font-weight: 100;
   }
+
+  @media (max-width: 900px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Label = styled.label`

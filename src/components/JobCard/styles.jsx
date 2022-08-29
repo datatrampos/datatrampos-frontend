@@ -68,6 +68,7 @@ export const CardInfoContainer = styled.div`
   @media (max-width: 900px) {
     align-items: baseline;
     flex-direction: column;
+    width: 100%;
   }
 `;
 

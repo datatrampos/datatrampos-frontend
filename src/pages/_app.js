@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <title>DataTrampos - As melhores vagas do Brasil para Dados.</title>
         <meta
           name="description"
-          content="Encontre as todas as vagas nas áreas de dados disponíveis em todo o Brasil. Nós agrupamos as melhores oportunidades em diversas Startups e Unicórnios"
+          content="Encontre as melhores vagas de emprego na área de dados, disponíveis em todo o Brasil. Nós agrupamos as melhores oportunidades em diversas Startups e Unicórnios"
         />
         <meta
           httpEquiv="content-type"

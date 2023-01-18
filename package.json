@@ -13,17 +13,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.11.4",
     "@tanstack/react-query": "^4.0.10",
     "antd": "^4.22.4",
     "axios": "^0.27.2",
     "babel-plugin-styled-components": "^2.0.7",
-    "next": "12.2.4",
+    "mui": "0.0.1",
+    "next": "^12.2.4",
     "npm": "^8.17.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

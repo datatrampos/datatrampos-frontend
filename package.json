@@ -1,36 +1,44 @@
 {
   "name": "datatrampos-frontend",
-  "description": "A website that shows the best open vacancies for Data people.",
   "version": "0.1.0",
-  "engines": {
-    "node": "16.x"
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.11.4",
-    "@tanstack/react-query": "^4.0.10",
-    "antd": "^4.22.4",
-    "axios": "^0.27.2",
-    "babel-plugin-styled-components": "^2.0.7",
-    "mui": "0.0.1",
-    "next": "^12.2.4",
-    "npm": "^8.17.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "next": "14.2.1",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0",
+    "@mui/icons-material": "^5.15.15",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "antd": "^5.16.2",
+    "axios": "^1.6.8",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-styled-components-a11y": "^2.1.32",
+    "globals": "^15.0.0",
+    "react-query": "^3.39.3",
+    "styled-components": "^6.1.8",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
   }
 }

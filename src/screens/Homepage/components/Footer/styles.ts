@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { COLORS } from "@/constants/colors";
-import Image from "next/image";
-import styled from "styled-components";
+import { COLORS } from '@/constants/colors'
+import Image from 'next/image'
+import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
   background-color: ${COLORS.darkGrey};
@@ -33,14 +33,14 @@ export const FooterContainer = styled.div`
     text-decoration: none;
     color: white;
   }
-`;
+`
 
 export const Logo = styled(Image)`
   width: 300px;
-`;
+`
 
 export const ImageContainer = styled.div`
   width: 226px;
   height: 34px;
   position: relative;
-`;
+`

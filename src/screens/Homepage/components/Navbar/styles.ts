@@ -1,8 +1,7 @@
-'use client';
+'use client'
 
-import { COLORS } from "@/constants/colors";
-import styled from "styled-components";
-
+import { COLORS } from '@/constants/colors'
+import styled from 'styled-components'
 
 export const Nav = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ export const Nav = styled.div`
     color: ${COLORS.white};
     font-size: 32px;
   }
-`;
+`
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -26,9 +25,9 @@ export const ImageContainer = styled.div`
     width: 300px;
     height: 40px;
   }
-`;
+`
 
 export const Container = styled.div`
-  padding-top:50px;
+  padding-top: 50px;
   background-color: ${COLORS.white};
-`;
+`

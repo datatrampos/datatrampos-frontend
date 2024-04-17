@@ -1,3 +1,3 @@
-import { OpeningSection } from "./OpeningSection";
+import { OpeningSection } from './OpeningSection'
 
 export default OpeningSection

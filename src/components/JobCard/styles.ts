@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import styled from "styled-components";
-import Image from "next/image";
-import { COLORS } from "@/constants/colors";
+import styled from 'styled-components'
+import Image from 'next/image'
+import { COLORS } from '@/constants/colors'
 
 export const Container = styled.div`
   display: flex;
@@ -23,22 +23,22 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: baseline;
   }
-`;
+`
 
 export const ImageContainer = styled.div`
   position: relative;
-  width:60px;
-  height:60px;
+  width: 60px;
+  height: 60px;
 
   @media (max-width: 900px) {
-    width:50px;
-    height:50px;
+    width: 50px;
+    height: 50px;
   }
-`;
+`
 
 export const CompanyLogo = styled(Image)`
   border-radius: 10px;
-`;
+`
 
 export const CompanyWithoutLogo = styled.div`
   display: flex;
@@ -56,12 +56,12 @@ export const CompanyWithoutLogo = styled.div`
     height: 50px;
     font-size: 24px;
   }
-`;
+`
 
 export const JobCardInfo = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const CardInfoContainer = styled.div`
   display: flex;
@@ -72,7 +72,7 @@ export const CardInfoContainer = styled.div`
     flex-direction: column;
     width: 100%;
   }
-`;
+`
 
 export const CompanyName = styled.span`
   font-size: 14px;
@@ -83,7 +83,7 @@ export const CompanyName = styled.span`
   @media (max-width: 900px) {
     margin: 7px 0;
   }
-`;
+`
 
 export const CardItemsContainer = styled.div`
   display: flex;
@@ -93,7 +93,7 @@ export const CardItemsContainer = styled.div`
     flex-wrap: wrap;
     margin-bottom: 15px;
   }
-`;
+`
 
 export const CardButton = styled.a`
   cursor: pointer;
@@ -116,7 +116,7 @@ export const CardButton = styled.a`
     color: ${COLORS.white} !important;
     transition: background 0.5s;
   }
-`;
+`
 
 export const CardItem = styled.div`
   display: flex;
@@ -126,13 +126,16 @@ export const CardItem = styled.div`
   font-size: 14px;
   margin-top: 5px;
   margin-right: 10px;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 50%;
 
   @media (max-width: 900px) {
     font-size: 13px;
     margin-bottom: 10px;
   }
-`;
+`
 
 export const TopContainer = styled.div`
   display: flex;
@@ -140,11 +143,11 @@ export const TopContainer = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  p{
+  p {
     color: ${COLORS.darkGreyCian};
     font-size: 12px;
   }
-`;
+`
 
 export const JobTitle = styled.a`
   font-size: 18px;
@@ -162,4 +165,4 @@ export const JobTitle = styled.a`
     font-size: 16px;
     height: 80px;
   }
-`;
+`

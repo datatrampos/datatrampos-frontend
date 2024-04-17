@@ -12,7 +12,7 @@ export const Navbar = () => {
               <Image
                 src="/assets/datatrampos-text-dark-pink.svg"
                 alt="datatrampos-logo-title"
-                layout="fill"
+                fill
               />
             </ImageContainer>
           </Link>

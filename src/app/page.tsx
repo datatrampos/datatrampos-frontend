@@ -1,8 +1,8 @@
 'use client'
 
-import Homepage from "@/screens/Homepage";
-import { queryClient } from "@/services/queryClient";
-import { QueryClientProvider } from "react-query";
+import Homepage from '@/screens/Homepage'
+import { queryClient } from '@/services/queryClient'
+import { QueryClientProvider } from 'react-query'
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
         <Homepage />
       </QueryClientProvider>
     </main>
-  );
+  )
 }

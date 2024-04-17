@@ -5,7 +5,6 @@ import { Select, Radio } from 'antd'
 
 import {
   Container,
-  Label,
   OptionLogo,
   InputContainer,
   NoLogo,
@@ -18,9 +17,10 @@ import { ICompanyData } from '@/types'
 import Row from '@/components/Row'
 import { DefaultOptionType } from 'antd/es/select'
 import { PaginationContext } from '@/context/pagination'
+import Label from '@/components/Label'
 
-export const JobFilter = () => {
-  const { setPage, setRemote, setCompany, setLocation, setOrderBy } =
+export const Filter = () => {
+  const { setPage, setRemote, setCompany, setLocation } =
     useContext(PaginationContext)
 
   const { data: companiesOptions, isLoading: loadingCompanies } = useQuery<
@@ -34,9 +34,9 @@ export const JobFilter = () => {
   return (
     <>
       <Container>
-        <Row center="true" wrap="true" justifyCenter="true">
+        <Row center="true" wrap="true" justifycenter="true">
           <InputContainer>
-            <Label>Ambiente de trabalho:</Label>
+            <Label issecondary="true">Ambiente de trabalho:</Label>
             <Radio.Group
               onChange={(e) => {
                 setRemote(e.target.value)
@@ -56,7 +56,7 @@ export const JobFilter = () => {
             </Radio.Group>
           </InputContainer>
           <InputContainer>
-            <Label>Empresas:</Label>
+            <Label issecondary="true">Empresas:</Label>
             <Select
               style={{ width: 200 }}
               onChange={(value, option: DefaultOptionType) => {
@@ -79,8 +79,8 @@ export const JobFilter = () => {
                           <OptionLogo
                             src={`data:image/jpeg;base64,${company.logo}`}
                             alt={`${company.name}-logo`}
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            style={{ objectFit: 'contain' }}
                           />
                         </OptionLogoContainer>
                       ) : (
@@ -94,7 +94,7 @@ export const JobFilter = () => {
             </Select>
           </InputContainer>
           <InputContainer>
-            <Label>Local:</Label>
+            <Label issecondary="true">Local:</Label>
             <Select
               style={{ width: 200 }}
               onChange={(value) => {
@@ -117,27 +117,6 @@ export const JobFilter = () => {
           </InputContainer>
         </Row>
       </Container>
-      <InputContainer style={{ flexDirection: 'row' }}>
-        <Label isSecondary>Ordenar por:</Label>
-        <Select
-          style={{ width: 150, marginBottom: '20px' }}
-          onChange={(value) => {
-            setOrderBy(value)
-            setPage(1)
-          }}
-          defaultValue="date"
-        >
-          <Select.Option key="date" value="date">
-            Mais novos
-          </Select.Option>
-          <Select.Option key="title" value="title">
-            Titulo em ordem alfabética
-          </Select.Option>
-          <Select.Option key="company" value="company">
-            Empresa em ordem alfabética
-          </Select.Option>
-        </Select>
-      </InputContainer>
     </>
   )
 }

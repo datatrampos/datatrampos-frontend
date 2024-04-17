@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import { COLORS } from "@/constants/colors";
-import styled from "styled-components";
+import { COLORS } from '@/constants/colors'
+import styled from 'styled-components'
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ export const ImageContainer = styled.div`
     width: 300px;
     height: 200px;
   }
-`;
+`
 
 export const Container = styled.div`
   background-color: ${COLORS.white};
@@ -26,12 +26,12 @@ export const Container = styled.div`
   @media (max-width: 900px) {
     padding: 25px;
   }
-`;
+`
 
 export const HeaderPresentation = styled.h1`
   color: ${COLORS.darkGrey};
   width: 900px;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 40px;
   margin-right: 30px;
   text-align: center;
@@ -41,7 +41,7 @@ export const HeaderPresentation = styled.h1`
     width: 95%;
     font-size: 32px;
   }
-`;
+`
 
 export const TextPresentation = styled.p`
   color: ${COLORS.darkGreyCian};
@@ -60,4 +60,4 @@ export const TextPresentation = styled.p`
     text-decoration: none;
     color: ${COLORS.darkGrey};
   }
-`;
+`

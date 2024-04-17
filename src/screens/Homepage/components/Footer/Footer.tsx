@@ -10,7 +10,7 @@ export const Footer = () => {
           <Logo
             src="/assets/datatrampos-text.svg"
             alt={'datatrampos-logo-title'}
-            layout="fill"
+            fill
           />
         </ImageContainer>
         <p>As melhores oportunidades em Dados nas melhores empresas!</p>

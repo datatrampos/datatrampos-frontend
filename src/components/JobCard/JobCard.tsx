@@ -41,8 +41,8 @@ export const JobCard = ({
               <CompanyLogo
                 src={`data:image/jpeg;base64,${logo}`}
                 alt={`${companyName}-logo`}
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: 'contain' }}
               />
             </ImageContainer>
           ) : (

@@ -4,8 +4,8 @@ import { COLORS } from '@/constants/colors'
 import styled from 'styled-components'
 
 export const PageTitle = styled.h2`
-  font-size: 46px;
-  font-weight: 100;
+  font-size: 36px;
+  font-weight: 200;
   text-align: center;
   color: ${COLORS.darkPink};
 

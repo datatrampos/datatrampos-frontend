@@ -1,13 +1,12 @@
-import React from 'react'
+import PageTitle from '@/components/PageTitle'
+import { PaginationProvider } from '@/context/pagination'
 
-import OpeningSection from './components/OpeningSection'
-import Navbar from './components/Navbar'
+import Filter from './components/Filter'
 import Footer from './components/Footer'
 import List from './components/List'
-import { PaginationProvider } from '@/context/pagination'
-import Filter from './components/Filter'
+import Navbar from './components/Navbar'
+import OpeningSection from './components/OpeningSection'
 import { FeaturedJobsContainer } from './styles'
-import PageTitle from '@/components/PageTitle'
 
 export const Homepage = () => {
   return (

@@ -33,6 +33,10 @@ export const InputContainer = styled.span`
   display: flex;
   flex-direction: column;
   margin-right: 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
 `
 
 export const OptionLogo = styled(Image)`

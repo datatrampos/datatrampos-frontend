@@ -17,7 +17,7 @@ export const JobsContainer = styled.div`
   justify-content: center;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 0 200px 0;
+  padding: 0 0 100px 0;
 `
 
 export const InputContainer = styled.span`

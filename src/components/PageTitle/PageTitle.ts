@@ -10,6 +10,6 @@ export const PageTitle = styled.h2`
   color: ${COLORS.darkPink};
 
   @media (max-width: 900px) {
-    font-size: 36px;
+    font-size: 30px;
   }
 `

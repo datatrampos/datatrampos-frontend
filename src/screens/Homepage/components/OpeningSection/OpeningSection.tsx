@@ -1,5 +1,6 @@
-import { Container, HeaderPresentation, ImageContainer } from './styles'
 import Image from 'next/image'
+
+import { Container, HeaderPresentation, ImageContainer } from './styles'
 
 export const OpeningSection = () => {
   return (

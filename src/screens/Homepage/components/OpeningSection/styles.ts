@@ -33,7 +33,6 @@ export const HeaderPresentation = styled.h1`
   width: 900px;
   font-weight: 500;
   font-size: 40px;
-  margin-right: 30px;
   text-align: center;
   margin-top: 20px;
 
